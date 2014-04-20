@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Usersubnumfk:</strong>
+  <%= @custinvoice.usersubnumfk %>
+</p>
+
+<p>
+  <strong>Usersubseqnumfk:</strong>
+  <%= @custinvoice.usersubseqnumfk %>
+</p>
+
+<p>
+  <strong>Invoiceamount:</strong>
+  <%= @custinvoice.invoiceamount %>
+</p>
+
+<p>
+  <strong>Billyear:</strong>
+  <%= @custinvoice.billyear %>
+</p>
+
+<p>
+  <strong>Billperiod:</strong>
+  <%= @custinvoice.billperiod %>
+</p>
+
+<p>
+  <strong>Affectedinvoice:</strong>
+  <%= @custinvoice.affectedinvoice %>
+</p>
+
+<p>
+  <strong>Createdate:</strong>
+  <%= @custinvoice.createdate %>
+</p>
+
+<%= link_to 'Edit', edit_custinvoice_path(@custinvoice) %> |
+<%= link_to 'Back', custinvoices_path %>

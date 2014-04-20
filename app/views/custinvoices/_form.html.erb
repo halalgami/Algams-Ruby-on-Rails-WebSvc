@@ -1,0 +1,45 @@
+<%= form_for(@custinvoice) do |f| %>
+  <% if @custinvoice.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@custinvoice.errors.count, "error") %> prohibited this custinvoice from being saved:</h2>
+
+      <ul>
+      <% @custinvoice.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :usersubnumfk %><br>
+    <%= f.number_field :usersubnumfk %>
+  </div>
+  <div class="field">
+    <%= f.label :usersubseqnumfk %><br>
+    <%= f.number_field :usersubseqnumfk %>
+  </div>
+  <div class="field">
+    <%= f.label :invoiceamount %><br>
+    <%= f.text_field :invoiceamount %>
+  </div>
+  <div class="field">
+    <%= f.label :billyear %><br>
+    <%= f.text_field :billyear %>
+  </div>
+  <div class="field">
+    <%= f.label :billperiod %><br>
+    <%= f.text_field :billperiod %>
+  </div>
+  <div class="field">
+    <%= f.label :affectedinvoice %><br>
+    <%= f.number_field :affectedinvoice %>
+  </div>
+  <div class="field">
+    <%= f.label :createdate %><br>
+    <%= f.datetime_select :createdate %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

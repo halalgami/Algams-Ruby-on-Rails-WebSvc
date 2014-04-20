@@ -1,0 +1,61 @@
+<%- model_class = BtcGsmSigSurv -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<div class="page-header">
+  <h3>Signal Map</h3>
+</div>
+<div>
+  <%= gmaps4rails(@map_data) %>
+</div>
+<div class="page-header">
+  <h3>Signal Raw Data List</h3>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:user_id) %></th>
+      <th><%= model_class.human_attribute_name(:sig_str) %></th>
+      <th><%= model_class.human_attribute_name(:latitude) %></th>
+      <th><%= model_class.human_attribute_name(:longitude) %></th>
+      <th><%= model_class.human_attribute_name(:pic_timestamp) %></th>
+      <th><%= model_class.human_attribute_name(:audit_create_date) %></th>
+      <th><%= model_class.human_attribute_name(:audit_change_date) %></th>
+      <th><%= model_class.human_attribute_name(:userinfo) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @btc_gsm_sig_survs.each do |btc_gsm_sig_surv| %>
+      <tr>
+        <td><%= link_to btc_gsm_sig_surv.id, btc_gsm_sig_surv_path(btc_gsm_sig_surv) %></td>
+        <td><%= btc_gsm_sig_surv.user_id %></td>
+        <td><%= btc_gsm_sig_surv.sig_str %></td>
+        <td><%= btc_gsm_sig_surv.latitude %></td>
+        <td><%= btc_gsm_sig_surv.longitude %></td>
+        <td><%= btc_gsm_sig_surv.pic_timestamp %></td>
+        <td><%= btc_gsm_sig_surv.audit_create_date %></td>
+        <td><%= btc_gsm_sig_surv.audit_change_date %></td>
+        <td><%= btc_gsm_sig_surv.userinfo %></td>
+        <td><%=l btc_gsm_sig_surv.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_btc_gsm_sig_surv_path(btc_gsm_sig_surv), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      btc_gsm_sig_surv_path(btc_gsm_sig_surv),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= will_paginate %>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_btc_gsm_sig_surv_path,
+            :class => 'btn btn-primary' %>

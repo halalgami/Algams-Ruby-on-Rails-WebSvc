@@ -1,0 +1,43 @@
+<h1>Listing locweb_thepics</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Posted by</th>
+      <th>Pic name</th>
+      <th>Pic location name</th>
+      <th>Pic coords</th>
+      <th>Pic timestamp</th>
+      <th>Pic image path</th>
+      <th>Pic weather currently</th>
+      <th>Pic status</th>
+      <th>Pic link</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @locweb_thepics.each do |locweb_thepic| %>
+      <tr>
+        <td><%= locweb_thepic.posted_by %></td>
+        <td><%= locweb_thepic.pic_name %></td>
+        <td><%= locweb_thepic.pic_location_name %></td>
+        <td><%= locweb_thepic.pic_coords %></td>
+        <td><%= locweb_thepic.pic_timestamp %></td>
+        <td><%= locweb_thepic.pic_image_path %></td>
+        <td><%= locweb_thepic.pic_weather_currently %></td>
+        <td><%= locweb_thepic.pic_status %></td>
+        <td><%= locweb_thepic.pic_link %></td>
+        <td><%= link_to 'Show', locweb_thepic %></td>
+        <td><%= link_to 'Edit', edit_locweb_thepic_path(locweb_thepic) %></td>
+        <td><%= link_to 'Destroy', locweb_thepic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Locweb thepic', new_locweb_thepic_path %>

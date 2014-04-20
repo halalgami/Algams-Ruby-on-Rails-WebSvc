@@ -1,0 +1,29 @@
+<%= form_for(@usersubnum) do |f| %>
+  <% if @usersubnum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@usersubnum.errors.count, "error") %> prohibited this usersubnum from being saved:</h2>
+
+      <ul>
+      <% @usersubnum.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :subnum %><br>
+    <%= f.number_field :subnum %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= f.text_field :status %>
+  </div>
+  <div class="field">
+    <%= f.label :createdate %><br>
+    <%= f.datetime_select :createdate %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,13 @@
+<h1>Sign Up Now!</h1>
+
+<%= simple_form_for(@user, html: { class: "form-horizontal"}) do |f| %>
+  <%= f.input :username %>
+  <%= f.input :realname %>
+  <%= f.input :email %>
+  <%= f.input :password %>
+  <%= f.input :password_confirmation %>
+  <div class="form-actions">
+  <%= f.button :submit, class: "btn-primary"%>
+  <%= submit_tag 'Cancel', type: 'reset', class: 'btn btn-danger'%>
+  </div>
+<% end %>

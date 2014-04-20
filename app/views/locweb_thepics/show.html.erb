@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Posted by:</strong>
+  <%= @locweb_thepic.posted_by %>
+</p>
+
+<p>
+  <strong>Pic name:</strong>
+  <%= @locweb_thepic.pic_name %>
+</p>
+
+<p>
+  <strong>Pic location name:</strong>
+  <%= @locweb_thepic.pic_location_name %>
+</p>
+
+<p>
+  <strong>Pic coords:</strong>
+  <%= @locweb_thepic.pic_coords %>
+</p>
+
+<p>
+  <strong>Pic timestamp:</strong>
+  <%= @locweb_thepic.pic_timestamp %>
+</p>
+
+<p>
+  <strong>Pic image path:</strong>
+  <%= @locweb_thepic.pic_image_path %>
+</p>
+
+<p>
+  <strong>Pic weather currently:</strong>
+  <%= @locweb_thepic.pic_weather_currently %>
+</p>
+
+<p>
+  <strong>Pic status:</strong>
+  <%= @locweb_thepic.pic_status %>
+</p>
+
+<p>
+  <strong>Pic link:</strong>
+  <%= @locweb_thepic.pic_link %>
+</p>
+
+<%= link_to 'Edit', edit_locweb_thepic_path(@locweb_thepic) %> |
+<%= link_to 'Back', locweb_thepics_path %>

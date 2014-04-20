@@ -1,0 +1,33 @@
+<h1>Listing custpayments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Paymentsource</th>
+      <th>Paymentamount</th>
+      <th>Affectedinvoice</th>
+      <th>Createdate</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @custpayments.each do |custpayment| %>
+      <tr>
+        <td><%= custpayment.paymentsource %></td>
+        <td><%= custpayment.paymentamount %></td>
+        <td><%= custpayment.affectedinvoice %></td>
+        <td><%= custpayment.createdate %></td>
+        <td><%= link_to 'Show', custpayment %></td>
+        <td><%= link_to 'Edit', edit_custpayment_path(custpayment) %></td>
+        <td><%= link_to 'Destroy', custpayment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Custpayment', new_custpayment_path %>

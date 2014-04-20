@@ -1,0 +1,33 @@
+<%= form_for(@custpayment) do |f| %>
+  <% if @custpayment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@custpayment.errors.count, "error") %> prohibited this custpayment from being saved:</h2>
+
+      <ul>
+      <% @custpayment.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :paymentsource %><br>
+    <%= f.text_field :paymentsource %>
+  </div>
+  <div class="field">
+    <%= f.label :paymentamount %><br>
+    <%= f.text_field :paymentamount %>
+  </div>
+  <div class="field">
+    <%= f.label :affectedinvoice %><br>
+    <%= f.number_field :affectedinvoice %>
+  </div>
+  <div class="field">
+    <%= f.label :createdate %><br>
+    <%= f.datetime_select :createdate %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

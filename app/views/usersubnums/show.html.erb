@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Subnum:</strong>
+  <%= @usersubnum.subnum %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @usersubnum.status %>
+</p>
+
+<p>
+  <strong>Createdate:</strong>
+  <%= @usersubnum.createdate %>
+</p>
+
+<%= link_to 'Edit', edit_usersubnum_path(@usersubnum) %> |
+<%= link_to 'Back', usersubnums_path %>

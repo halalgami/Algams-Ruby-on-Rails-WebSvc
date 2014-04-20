@@ -1,0 +1,31 @@
+<h1>Listing usersubnums</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Subnum</th>
+      <th>Status</th>
+      <th>Createdate</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @usersubnums.each do |usersubnum| %>
+      <tr>
+        <td><%= usersubnum.subnum %></td>
+        <td><%= usersubnum.status %></td>
+        <td><%= usersubnum.createdate %></td>
+        <td><%= link_to 'Show', usersubnum %></td>
+        <td><%= link_to 'Edit', edit_usersubnum_path(usersubnum) %></td>
+        <td><%= link_to 'Destroy', usersubnum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Usersubnum', new_usersubnum_path %>

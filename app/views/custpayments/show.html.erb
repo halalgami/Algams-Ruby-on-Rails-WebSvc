@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Paymentsource:</strong>
+  <%= @custpayment.paymentsource %>
+</p>
+
+<p>
+  <strong>Paymentamount:</strong>
+  <%= @custpayment.paymentamount %>
+</p>
+
+<p>
+  <strong>Affectedinvoice:</strong>
+  <%= @custpayment.affectedinvoice %>
+</p>
+
+<p>
+  <strong>Createdate:</strong>
+  <%= @custpayment.createdate %>
+</p>
+
+<%= link_to 'Edit', edit_custpayment_path(@custpayment) %> |
+<%= link_to 'Back', custpayments_path %>

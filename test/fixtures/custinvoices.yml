@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  usersubnumfk: 1
+  usersubseqnumfk: 1
+  invoiceamount: 9.99
+  billyear: MyString
+  billperiod: MyString
+  affectedinvoice: 1
+  createdate: 2014-01-23 14:43:40
+
+two:
+  usersubnumfk: 1
+  usersubseqnumfk: 1
+  invoiceamount: 9.99
+  billyear: MyString
+  billperiod: MyString
+  affectedinvoice: 1
+  createdate: 2014-01-23 14:43:40

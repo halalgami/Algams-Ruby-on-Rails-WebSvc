@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  posted_by: MyString
+  pic_name: MyString
+  pic_location_name: MyString
+  pic_coords: MyString
+  pic_timestamp: 2014-02-03 11:18:20
+  pic_image_path: MyString
+  pic_weather_currently: MyText
+  pic_status: MyString
+  pic_link: MyText
+
+two:
+  posted_by: MyString
+  pic_name: MyString
+  pic_location_name: MyString
+  pic_coords: MyString
+  pic_timestamp: 2014-02-03 11:18:20
+  pic_image_path: MyString
+  pic_weather_currently: MyText
+  pic_status: MyString
+  pic_link: MyText

@@ -1,0 +1,22 @@
+<div>
+  <h3>Signal Strength: <%= signal.sig_str %></h3>
+  <h3>Survey Submitted at: <%= signal.created_at %></h3>
+  <h3>Submitted by: <%= user_info[user_info.index('"IMSI":'),(user_info.index('}'))] %></h3>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Data</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% (1..user_info.count(',')).each do |i| %>
+      <tr>
+        <td><%= user_info.to_s.split(',')[i].to_s.split(':')[0] %></td>
+        <td><%= user_info.to_s.split(',')[i].to_s.split(':')[1] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

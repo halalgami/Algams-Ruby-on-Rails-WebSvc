@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  paymentsource: MyString
+  paymentamount: 9.99
+  affectedinvoice: 1
+  createdate: 2014-01-23 14:43:50
+
+two:
+  paymentsource: MyString
+  paymentamount: 9.99
+  affectedinvoice: 1
+  createdate: 2014-01-23 14:43:50

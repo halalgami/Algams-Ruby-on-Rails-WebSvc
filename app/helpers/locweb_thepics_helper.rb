@@ -1,0 +1,2 @@
+module LocwebThepicsHelper
+end

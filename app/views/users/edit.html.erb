@@ -1,0 +1,15 @@
+<h1>Editing user details <%= @user.username %></h1>
+
+<!--<%= render 'form' %>  -->
+
+<%= simple_form_for(@user, html: { class: "form-horizontal"}) do |f| %>
+  <%= f.input :realname %>
+  <%= f.input :email %>
+  <%= f.input :password %>
+  <%= f.input :password_confirmation %>
+  <%= f.input :userinfo %>
+  <div class="form-actions">
+  <%= f.button :submit, class: "btn-primary"%>
+  <%= link_to 'Back', current_user, class: 'btn btn-danger'%>
+  </div>
+<% end %>

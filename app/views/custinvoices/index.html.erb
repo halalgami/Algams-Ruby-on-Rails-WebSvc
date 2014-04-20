@@ -1,0 +1,39 @@
+<h1>Listing custinvoices</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Usersubnumfk</th>
+      <th>Usersubseqnumfk</th>
+      <th>Invoiceamount</th>
+      <th>Billyear</th>
+      <th>Billperiod</th>
+      <th>Affectedinvoice</th>
+      <th>Createdate</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @custinvoices.each do |custinvoice| %>
+      <tr>
+        <td><%= custinvoice.usersubnumfk %></td>
+        <td><%= custinvoice.usersubseqnumfk %></td>
+        <td><%= custinvoice.invoiceamount %></td>
+        <td><%= custinvoice.billyear %></td>
+        <td><%= custinvoice.billperiod %></td>
+        <td><%= custinvoice.affectedinvoice %></td>
+        <td><%= custinvoice.createdate %></td>
+        <td><%= link_to 'Show', custinvoice %></td>
+        <td><%= link_to 'Edit', edit_custinvoice_path(custinvoice) %></td>
+        <td><%= link_to 'Destroy', custinvoice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Custinvoice', new_custinvoice_path %>

@@ -1,0 +1,2 @@
+module CustinvoicesHelper
+end

@@ -1,0 +1,56 @@
+<%= form_for @btc_gsm_sig_surv, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :user_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :user_id, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :sig_str, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :sig_str, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :latitude, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :latitude, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :longitude, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :longitude, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :pic_timestamp, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :pic_timestamp, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :audit_create_date, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :audit_create_date, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :audit_change_date, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :audit_change_date, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :userinfo, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :userinfo, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                btc_gsm_sig_survs_path, :class => 'btn' %>
+  </div>
+<% end %>

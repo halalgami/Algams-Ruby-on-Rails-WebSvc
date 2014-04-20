@@ -19,7 +19,7 @@ class BtcGsmSigSurvsController < ApplicationController
       #@user_array = CSV.parse("LAC:301,IPAddresses:WifiIPAddress:192.16,")
       @user_array = id.userinfo
       marker.infowindow render_to_string(:partial => "/btc_gsm_sig_survs/infowindow", :locals => { :signal => id, :user_info => @user_array})
-      marker.title "Signal Strength is #{id.sig_str} <br> #{user_info[user_info.index('"CallScenario":'),(user_info.index(','))]}"
+      marker.title "Signal Strength is #{id.sig_str} \n #{id.userinfo[id.userinfo.index('CallScenario')..(id.userinfo.index('","SystemVersion"')-1)]}"
       #marker.json({:sig_str => id.sig_str})
       #marker.json({:extra_info => id.latitude})
       #marker.json({:creation_time => id.created_at})

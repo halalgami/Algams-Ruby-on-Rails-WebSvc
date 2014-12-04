@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140203121254) do
+ActiveRecord::Schema.define(version: 20141128143915) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,24 @@ ActiveRecord::Schema.define(version: 20140203121254) do
     t.datetime "audit_create_date"
     t.datetime "audit_change_date"
     t.text     "userinfo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "cell_towers", force: true do |t|
+    t.string   "cgi"
+    t.integer  "cell_id"
+    t.string   "site_name"
+    t.string   "site"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "btc_cell_id"
+    t.string   "location_type"
+    t.integer  "node_b"
+    t.integer  "no_carriers"
+    t.float    "eff_hsdpa_cap"
+    t.float    "enhanced_uplink"
+    t.string   "band"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -67,6 +85,22 @@ ActiveRecord::Schema.define(version: 20140203121254) do
     t.text     "pic_weather_currently"
     t.string   "pic_status"
     t.text     "pic_link"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "timetables", force: true do |t|
+    t.string   "course"
+    t.string   "course_code"
+    t.string   "section"
+    t.string   "title"
+    t.string   "day"
+    t.string   "starttime"
+    t.string   "endtime"
+    t.datetime "exam_date_start"
+    t.datetime "exame_date_end"
+    t.string   "course_room"
+    t.string   "Lecterur"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

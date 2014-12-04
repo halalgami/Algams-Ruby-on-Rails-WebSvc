@@ -9,17 +9,24 @@
   <dt><strong><%= model_class.human_attribute_name(:sig_str) %>:</strong></dt>
   <dd><%= @btc_gsm_sig_surv.sig_str %></dd>
   <dt><strong><%= model_class.human_attribute_name(:latitude) %>:</strong></dt>
-  <dd><%= @btc_gsm_sig_surv.sig_lat %></dd>
+  <dd><%= @btc_gsm_sig_surv.latitude %></dd>
   <dt><strong><%= model_class.human_attribute_name(:longitude) %>:</strong></dt>
-  <dd><%= @btc_gsm_sig_surv.sig_longa %></dd>
+  <dd><%= @btc_gsm_sig_surv.longitude %></dd>
   <dt><strong><%= model_class.human_attribute_name(:pic_timestamp) %>:</strong></dt>
   <dd><%= @btc_gsm_sig_surv.pic_timestamp %></dd>
   <dt><strong><%= model_class.human_attribute_name(:audit_create_date) %>:</strong></dt>
   <dd><%= @btc_gsm_sig_surv.audit_create_date %></dd>
   <dt><strong><%= model_class.human_attribute_name(:audit_change_date) %>:</strong></dt>
   <dd><%= @btc_gsm_sig_surv.audit_change_date %></dd>
+
+  <!--
   <dt><strong><%= model_class.human_attribute_name(:userinfo) %>:</strong></dt>
   <dd><%= @btc_gsm_sig_surv.userinfo %></dd>
+  -->
+  <% JSON.parse(@btc_gsm_sig_surv.userinfo).each do |item| %>
+    <dt><strong><%= model_class.human_attribute_name(item[0]) %>:</strong></dt>
+    <dd><%= item[1] %></dd>
+  <% end %>
 </dl>
 
 <div class="form-actions">

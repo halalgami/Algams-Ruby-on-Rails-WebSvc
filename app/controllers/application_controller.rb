@@ -3,8 +3,9 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   #protect_from_forgery with: :exception
   protect_from_forgery
+  
+private
 
-private 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
@@ -24,14 +25,14 @@ private
     when Mime::JSON, Mime::XML, Mime::ATOM
       # user = User.find(params[:user_id])
       # head :unauthorized unless user.api_keys.exists?(access_token: params[:access_token])
-      
+
       authenticate_or_request_with_http_token do |token, options|
         user = User.find(params[:user_id])
         if user
           user.api_keys.exists?(access_token: token)
         end
       end
-    else  
+    else
       redirect_to signin_url, alert: "Not authorized" if current_user.nil?
       #alert: "Not authorized" if current_user.nil?
 end

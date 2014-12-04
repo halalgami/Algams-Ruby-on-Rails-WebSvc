@@ -1,0 +1,51 @@
+<h1>Listing cell_towers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cgi</th>
+      <th>Cell</th>
+      <th>Site name</th>
+      <th>Site</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th>Btc cell</th>
+      <th>Location type</th>
+      <th>Node b</th>
+      <th>No carriers</th>
+      <th>Eff hsdpa cap</th>
+      <th>Enhanced uplink</th>
+      <th>Band</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cell_towers.each do |cell_tower| %>
+      <tr>
+        <td><%= cell_tower.cgi %></td>
+        <td><%= cell_tower.cell_id %></td>
+        <td><%= cell_tower.site_name %></td>
+        <td><%= cell_tower.site %></td>
+        <td><%= cell_tower.latitude %></td>
+        <td><%= cell_tower.longitude %></td>
+        <td><%= cell_tower.btc_cell_id %></td>
+        <td><%= cell_tower.location_type %></td>
+        <td><%= cell_tower.node_b %></td>
+        <td><%= cell_tower.no_carriers %></td>
+        <td><%= cell_tower.eff_hsdpa_cap %></td>
+        <td><%= cell_tower.enhanced_uplink %></td>
+        <td><%= cell_tower.band %></td>
+        <td><%= link_to 'Show', cell_tower %></td>
+        <td><%= link_to 'Edit', edit_cell_tower_path(cell_tower) %></td>
+        <td><%= link_to 'Destroy', cell_tower, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cell tower', new_cell_tower_path %>

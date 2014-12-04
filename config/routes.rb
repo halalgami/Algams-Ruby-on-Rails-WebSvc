@@ -1,4 +1,6 @@
 Algamswebsvc::Application.routes.draw do
+  resources :cell_towers
+
   get "sessions/new"
   get "sessions/create"
   get "sessions/destroy"
@@ -17,7 +19,9 @@ Algamswebsvc::Application.routes.draw do
 
   #matching up a path to a specific action
   get '/signup' => 'users#new'
-  get '/signin' => 'sessions#new'
+  #get '/signin' => 'sessions#new'
+  get '/towers_gmap' => 'cell_towers#towers_gmap'
+  get '/algam' => 'sessions#new'
   post '/signin' => 'sessions#new'
   get '/signout' => 'sessions#destroy', via: :delete
   #get '/signout' => 'sessions#destroy'
@@ -28,8 +32,15 @@ Algamswebsvc::Application.routes.draw do
 
 
   #setting root url
-  root :to => 'main#index'
+  #root :to => 'main#index'
 
+  #and setting custom page for the root URL
+  root :controller => 'main', :action => :index
+
+  #for the admin panel
+  get '/admin' => 'sessions#new'
+
+  get "*rest" => "main#not_found"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,0 +1,23 @@
+<%= simple_form_for(@cell_tower) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :cgi %>
+    <%= f.input :cell_id %>
+    <%= f.input :site_name %>
+    <%= f.input :site %>
+    <%= f.input :latitude %>
+    <%= f.input :longitude %>
+    <%= f.input :btc_cell_id %>
+    <%= f.input :location_type %>
+    <%= f.input :node_b %>
+    <%= f.input :no_carriers %>
+    <%= f.input :eff_hsdpa_cap %>
+    <%= f.input :enhanced_uplink %>
+    <%= f.input :band %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cgi: MyString
+  cell_id: 1
+  site_name: MyString
+  site: MyString
+  latitude: 
+  longitude: 
+  btc_cell_id: MyString
+  location_type: MyString
+  node_b: 1
+  no_carriers: 1
+  eff_hsdpa_cap: 
+  enhanced_uplink: 
+  band: MyString
+
+two:
+  cgi: MyString
+  cell_id: 1
+  site_name: MyString
+  site: MyString
+  latitude: 
+  longitude: 
+  btc_cell_id: MyString
+  location_type: MyString
+  node_b: 1
+  no_carriers: 1
+  eff_hsdpa_cap: 
+  enhanced_uplink: 
+  band: MyString

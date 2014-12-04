@@ -35,7 +35,8 @@ gem "twitter-bootstrap-rails"
 gem "simple_form"
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
-gem 'gmaps4rails', '~> 1.5.6'
+gem 'gmaps4rails'
+gem 'underscore-rails'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

@@ -1,45 +1,110 @@
 <%- model_class = BtcGsmSigSurv -%>
+<% my_circles = JSON.parse(@circle_towers.to_json) %>
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
 <div class="page-header">
   <h3>Signal Map</h3>
 </div>
-<div>
-  <%= gmaps4rails(@map_data) %>
+<div style='width: 800px;'>
+  <div id="map" style='width: 800px; height: 400px;'>
+    <script type="text/javascript">
+    handler = Gmaps.build('Google');
+    handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+    //populating the markers
+    markers = handler.addMarkers(<%=raw @map_data.to_json %>);
+    handler.bounds.extendWith(markers);
+
+    //populating the lines    
+    //var the_lines = [[26.158472,50.471322],[26.158021,50.471243]];
+    var the_lines = <%=raw @final_lines.to_s.gsub("\"", "") %>;
+        the_lines.options = {
+          geodesic: true,
+          strokeColor: '#FF0000',
+          strokeOpacity: 1.0,
+          strokeWeight: 2,
+          title: 'Tower attached'
+        };
+
+    function addPolyline(polyline){
+          var transformedPolyline = _.map(polyline, function(coordinates){
+            return { lat: coordinates[0], lng: coordinates[1] };
+          })
+          handler.addPolyline(transformedPolyline, polyline.options);
+          handler.bounds.extend(transformedPolyline[0]);
+          handler.bounds.extend(polyline[ polyline.length - 1]);
+        }
+
+    addPolyline(the_lines);
+
+    //populating the circles (optional)
+    //circle_options = { strokeColor:"#0000FF",strokeOpacity: 1, strokeWeight: 3, fillColor: 'transparent' }
+    //circle = [{'lng' => <%=raw my_circles[0]["lng"] %>, 'lat' => <%=raw my_circles[0]["lat"] %>, 'radius' => 25000, 'strokeColor' => '#FF0000'}]
+    //handler.addCircle(circle,circle_options);
+
+    //finally
+    handler.fitMapToBounds();
+  });
+</script>
+  </div>
 </div>
 <div class="page-header">
   <h3>Signal Raw Data List</h3>
+  <%=raw @final_lines.to_s.gsub("\"", "") %>
 </div>
 <table class="table table-striped">
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:survey_created_at) %></th>
+      <!--
       <th><%= model_class.human_attribute_name(:user_id) %></th>
+      -->
+      <th><%= model_class.human_attribute_name(:IMSI) %></th>
       <th><%= model_class.human_attribute_name(:sig_str) %></th>
       <th><%= model_class.human_attribute_name(:latitude) %></th>
       <th><%= model_class.human_attribute_name(:longitude) %></th>
+      <!--
       <th><%= model_class.human_attribute_name(:pic_timestamp) %></th>
       <th><%= model_class.human_attribute_name(:audit_create_date) %></th>
       <th><%= model_class.human_attribute_name(:audit_change_date) %></th>
-      <th><%= model_class.human_attribute_name(:userinfo) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      -->
+
+      <th><%= model_class.human_attribute_name(:IMEI) %></th>
+      <th><%= model_class.human_attribute_name(:Carrier) %></th>
+      <th><%= model_class.human_attribute_name(:MCCMNC) %></th>
+      <th><%= model_class.human_attribute_name(:Cell_ID) %></th>
+      <th>Call Scenario</th>
+      <th><%= model_class.human_attribute_name(:Attached_Network_Type) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @btc_gsm_sig_survs.each do |btc_gsm_sig_surv| %>
+
       <tr>
         <td><%= link_to btc_gsm_sig_surv.id, btc_gsm_sig_surv_path(btc_gsm_sig_surv) %></td>
+        <td><%=l btc_gsm_sig_surv.created_at %></td>
+        <td><%= JSON.parse(btc_gsm_sig_surv.userinfo)["IMSI"] %></td>
+        <!--
         <td><%= btc_gsm_sig_surv.user_id %></td>
+        -->
         <td><%= btc_gsm_sig_surv.sig_str %></td>
         <td><%= btc_gsm_sig_surv.latitude %></td>
         <td><%= btc_gsm_sig_surv.longitude %></td>
+        <!--
         <td><%= btc_gsm_sig_surv.pic_timestamp %></td>
         <td><%= btc_gsm_sig_surv.audit_create_date %></td>
         <td><%= btc_gsm_sig_surv.audit_change_date %></td>
         <td><%= btc_gsm_sig_surv.userinfo %></td>
-        <td><%=l btc_gsm_sig_surv.created_at %></td>
+        -->
+
+        <td><%= JSON.parse(btc_gsm_sig_surv.userinfo)["IMEI"] %></td>
+        <td><%= JSON.parse(btc_gsm_sig_surv.userinfo)["Carrier"] %></td>
+        <td><%= JSON.parse(btc_gsm_sig_surv.userinfo)["MCC"] %>-<%= JSON.parse(btc_gsm_sig_surv.userinfo)["MNC"] %></td>
+        <td><%= JSON.parse(btc_gsm_sig_surv.userinfo)["CID"] %></td>
+        <td><%= JSON.parse(btc_gsm_sig_surv.userinfo)["CallScenario"] %></td>
+        <td><%= JSON.parse(btc_gsm_sig_surv.userinfo)["NetworkType"] %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_btc_gsm_sig_surv_path(btc_gsm_sig_surv), :class => 'btn btn-mini' %>

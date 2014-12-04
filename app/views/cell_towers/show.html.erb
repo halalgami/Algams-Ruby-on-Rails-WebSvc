@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cgi:</strong>
+  <%= @cell_tower.cgi %>
+</p>
+
+<p>
+  <strong>Cell:</strong>
+  <%= @cell_tower.cell_id %>
+</p>
+
+<p>
+  <strong>Site name:</strong>
+  <%= @cell_tower.site_name %>
+</p>
+
+<p>
+  <strong>Site:</strong>
+  <%= @cell_tower.site %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @cell_tower.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @cell_tower.longitude %>
+</p>
+
+<p>
+  <strong>Btc cell:</strong>
+  <%= @cell_tower.btc_cell_id %>
+</p>
+
+<p>
+  <strong>Location type:</strong>
+  <%= @cell_tower.location_type %>
+</p>
+
+<p>
+  <strong>Node b:</strong>
+  <%= @cell_tower.node_b %>
+</p>
+
+<p>
+  <strong>No carriers:</strong>
+  <%= @cell_tower.no_carriers %>
+</p>
+
+<p>
+  <strong>Eff hsdpa cap:</strong>
+  <%= @cell_tower.eff_hsdpa_cap %>
+</p>
+
+<p>
+  <strong>Enhanced uplink:</strong>
+  <%= @cell_tower.enhanced_uplink %>
+</p>
+
+<p>
+  <strong>Band:</strong>
+  <%= @cell_tower.band %>
+</p>
+
+<%= link_to 'Edit', edit_cell_tower_path(@cell_tower) %> |
+<%= link_to 'Back', cell_towers_path %>

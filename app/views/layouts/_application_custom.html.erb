@@ -1,0 +1,22 @@
+<header id="header">
+<div id="logo">Algam's Little Corner</div>
+<nav id="naval">
+	<ul>
+	<li><a href="#posts" title="My Posts" >Posts</a></li>
+	<li><a href="#portfolio" title="Product Portfolio">Portfolio</a></li>
+	<li><a href="#about" title="About Algam">About Algam</a></li>
+	</ul>
+</nav>
+</header>
+      <div class="row-fluid">
+
+
+          <%= bootstrap_flash %>
+          <%= yield %>
+          <%= yield :scripts %>
+
+      </div><!--/row-->
+
+      <footer id="copyright">
+        <p>&copy; AlgamNet 2014</p>
+      </footer>

@@ -1,0 +1,183 @@
+body{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+h1 {
+  font-family:"Kaushan Script";
+	font-weight:normal;
+	font-size: 55px;
+	font-size: 100vw;
+	text-align: center;
+	color: #fff;
+	margin: 0;
+	padding: 0;
+}
+
+h2 {
+   font-family:"Kaushan Script";
+   font-weight: normal;
+   font-size: 40px;
+   text-align: center;
+   color: #fff;
+   margin: 0;
+	padding: 0;
+}
+
+h3 {
+   font-family: "Kaushan Script";
+   font-weight: normal;
+   font-size: 16px;
+   text-align: center;
+   margin: 5px 0;
+	padding: 0;
+	z-index: 1;
+	position: relative;
+}
+.center { margin: 0 auto; }
+.content{ margin: 0 auto; width: 960px; }
+.clear { clear: both; }
+
+#logo{
+	opacity: 1;
+	color: #fff;
+	text-decoration: none;
+	float: left;
+	font-size: 100px;
+	margin-top: -130px;
+	margin-left: 10px;
+	color: #fff;
+	font-family:"Great Vibes";
+	font-weight: bold;
+	display: block;
+}
+
+
+#naval {float: right; margin-top: -130px; margin-right: 50px; }
+
+#naval ul{
+	list-style: none;
+	display: block;
+	margin: 0 auto;
+	list-style: none;
+}
+
+#naval li{
+	margin-top: 9px;
+	float: left;
+	padding-left: 21px;
+}
+
+#naval li a { color: #fff; opacity:0.6; font-size: 40px; text-decoration: none; font-family:"Great Vibes"; }
+
+#naval li a:hover {
+  background: #C7D4CD;
+	border-radius: 20px;
+}
+
+#naval li a {
+  opacity: 1;
+  display: block;
+  padding: 10px;
+  border-radius: 2px;
+  color: #fff;
+   -webkit-transition: all 0.5s ease;
+     -moz-transition: all 0.5s ease;
+       -o-transition: all 0.5s ease;
+      -ms-transition: all 0.5s ease;
+          transition: all 0.5s ease;
+}
+
+#header {
+	width: 100%;
+	position: fixed;
+	margin-top: 200px;
+}
+
+#posts {
+	background-image: url("/assets/open_vista.jpeg"); 50% 0 no-repeat fixed;
+	color: #fff;
+	height: 500px;
+	padding: 200px 0 260px 0;
+	background-size: cover;
+	border-bottom: 2px solid #fff;
+}
+
+#portfolio{
+	background-image: url("/assets/la_defanse.jpeg"); 50% 0 no-repeat fixed;
+	color: #fff;
+	height: 600px;
+	padding: 200px 0 260px 0;
+	background-size: cover;
+	border-bottom: 2px solid #fff;
+}
+
+#about{
+	background-image: url("/assets/interlaken_center.jpg"); 50% 0 no-repeat fixed;
+	color: #fff;
+	height: 500px;
+	padding: 200px 0 260px 0;
+	background-size: cover;
+}
+
+#copyright {
+	  clear: both;
+      position: relative;
+      z-index: 10;
+      height: 3em;
+			color: #fff;
+      margin-top: -3em;
+}
+
+
+#icons{
+	 margin-top: 10px; margin-left: 30px;
+}
+
+img.img_ic{
+	width: auto;
+  height: 130px;
+}
+
+#icons ul{
+	list-style: none;
+	display: block;
+	margin: 0 auto;
+}
+
+#icons li a {
+	float: left;
+	display: block;
+  background: transparent;
+  padding: 20px;
+  border-radius: 0px;
+  color: #fff;
+}
+
+#icons li a > .img_ic {
+  opacity: 0.5;
+  -webkit-transition: all 0.5s ease;
+     -moz-transition: all 0.5s ease;
+       -o-transition: all 0.5s ease;
+      -ms-transition: all 0.5s ease;
+          transition: all 0.5s ease;
+}
+
+#icons li a:hover > .img_ic {
+	opacity: 1;
+}
+
+#bio{
+	opacity: 1;
+	color: #fff;
+	text-decoration: none;
+	float: left;
+	font-size: 60px;
+	color: #fff;
+	font-family:"Great Vibes";
+	font-weight: bold;
+	display: block;
+}
+
+#cptext { color: #fff; text-decoration: none; float: left; font-size: 20px; margin-bottom: 10px; margin-left: 30px; color: #fff; font-family:"Great Vibes"; font-weight: normal; }

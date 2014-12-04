@@ -1,7 +1,8 @@
+<% temp_hdr = JSON.parse(user_info) %>
 <div>
   <h3>Signal Strength: <%= signal.sig_str %></h3>
   <h3>Survey Submitted at: <%= signal.created_at %></h3>
-  <h3>Submitted by: <%= user_info[user_info.index('"IMSI":'),(user_info.index('}'))] %></h3>
+  <h3>Submitted by IMSI: <%= temp_hdr["IMSI"] %></h3>
 </div>
 
 <table class="table table-striped">
@@ -12,10 +13,10 @@
     </tr>
   </thead>
   <tbody>
-    <% (1..user_info.count(',')).each do |i| %>
+    <% JSON.parse(user_info).each do |item| %>
       <tr>
-        <td><%= user_info.to_s.split(',')[i].to_s.split(':')[0] %></td>
-        <td><%= user_info.to_s.split(',')[i].to_s.split(':')[1] %></td>
+        <td><%= item[0] %></td>
+        <td><%= item[1] %></td>
       </tr>
     <% end %>
   </tbody>

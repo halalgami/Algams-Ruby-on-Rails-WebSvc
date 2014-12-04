@@ -1,3 +1,9 @@
 == README
 
 Algams Ruby On Rails Web Service Adventures!
+
+Just a simple ruby on rails app that does the following:
+
+Expose a JSON webservice for inserts
+Display input on a google map (many thanks to gmaps4rails)
+
